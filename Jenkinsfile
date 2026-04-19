@@ -20,22 +20,7 @@ pipeline {
             }
         }
 
-        stage('NPM Install & Build (Frontend)') {
-            steps {
-                dir('mini-wallet') {
-                    sh 'npm install'
-                    sh 'npm run build'
-                }
-            }
-        }
 
-        stage('NPM Install (Backend)') {
-            steps {
-                dir('mini-wallet-backend') {
-                    sh 'npm install'
-                }
-            }
-        }
 
         stage('Container Build') {
             steps {
