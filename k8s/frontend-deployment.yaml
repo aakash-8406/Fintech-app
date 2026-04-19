@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: yourusername/mini-wallet-frontend:latest
+        image: aakash985/mini-wallet-frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80

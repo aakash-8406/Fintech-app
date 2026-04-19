@@ -23,7 +23,7 @@ spec:
       containers:
       - name: backend-container
         # Notice we assume this variable matches Dockerhub. Overwrite with actual statically later if you don't use helm/kustomize
-        image: yourusername/mini-wallet-backend:latest 
+        image: aakash985/mini-wallet-backend:latest 
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
