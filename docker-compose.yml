@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./mini-wallet-backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+    networks:
+      - mini-wallet-net
+
+  frontend:
+    build:
+      context: ./mini-wallet
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - mini-wallet-net
+
+networks:
+  mini-wallet-net:
+    driver: bridge
