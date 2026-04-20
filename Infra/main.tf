@@ -38,15 +38,6 @@ resource "aws_security_group" "jenkins_sg" {
     protocol    = "tcp"
     cidr_blocks = var.allowed_cidr_blocks
   }
-
-  # Jenkins JNLP agent port
-  ingress {
-    from_port   = 50000
-    to_port     = 50000
-    protocol    = "tcp"
-    cidr_blocks = var.allowed_cidr_blocks
-  }
-
   egress {
     from_port   = 0
     to_port     = 0
