@@ -9,10 +9,6 @@ app.use(express.json());
 
 // In-memory persistent state (for simple demonstration without a real database)
 let balance = 1250.00;
-let transactions = [
-  { id: 1, type: 'receive', amount: 500, date: new Date(Date.now() - 86400000 * 2).toISOString(), counterparty: 'Employer Inc.' },
-  { id: 2, type: 'send', amount: 50, date: new Date(Date.now() - 86400000).toISOString(), counterparty: 'jane.doe@example.com' },
-];
 
 // HEALTH ENDPOINT (Crucial for Kubernetes Liveness/Readiness probes)
 app.get('/health', (req, res) => {
